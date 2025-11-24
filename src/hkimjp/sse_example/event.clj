@@ -1,7 +1,8 @@
 (ns hkimjp.sse-example.event
   (:require
    [org.httpkit.server :as hk]
-   [hiccup2.core :as h]))
+   [hiccup2.core :as h]
+   [taoensso.telemere :as tel]))
 
 (defonce clients (atom #{}))
 
@@ -25,6 +26,10 @@
 
 (defn broadcast-message-to-connected-clients! [message]
   (run! (fn [ch] (send! ch message)) @clients))
+
+(defn broadcast! [{{:keys [bc]} :params}]
+  (tel/log! {:level :info :id "broadcast!" :msg bc})
+  (broadcast-message-to-connected-clients!  bc))
 
 (comment
   ;; Open a terminal and connect

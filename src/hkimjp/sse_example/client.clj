@@ -1,5 +1,7 @@
 (ns hkimjp.sse-example.client
   (:require
+   [hiccup2.core :as h]
+   [ring.util.anti-forgery :refer [anti-forgery-field]]
    [hkimjp.sse-example.views :refer [page]]))
 
 (defn client [_request]
@@ -13,10 +15,17 @@
       "What time?"]]
     [:div [:span#now.border-1 "..."]]
     [:div.text-2xl.font-bold.py-2 "SSE example, using htmx-ext-sse"]
+    [:form
+     (h/raw (anti-forgery-field))
+     [:input.border-1 {:name "bc"}]
+     [:button.bg-sky-400.rounded.hover:bg-sky-600.text-white
+      {:hx-post "/broadcast" :hx-swap "none"}
+      "broadcast"]]
     [:div
-     {:hx-ext      "sse"
-      :sse-connect "/event"
-      :sse-swap    "message"}
-     "Contents of this box will be updated in real time
-    with every SSE message received from the chatroom."]]))
+     "broadcast ->" [:span
+                     {:hx-ext      "sse"
+                      :sse-connect "/event"
+                      :sse-swap    "message"}
+                     "Contents of this box will be updated in real time
+    with every SSE message received from the chatroom."]]]))
 

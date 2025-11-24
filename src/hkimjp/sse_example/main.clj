@@ -8,5 +8,7 @@
 (defn start-server [& _]
   (reset! server (hk/run-server #'handler {:port 8888})))
 
+; (start-server)
+
 ; stop server
 ; (@server)
