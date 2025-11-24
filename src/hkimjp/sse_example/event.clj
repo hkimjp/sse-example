@@ -27,9 +27,9 @@
 (defn broadcast-message-to-connected-clients! [message]
   (run! (fn [ch] (send! ch message)) @clients))
 
-(defn broadcast! [{{:keys [bc]} :params}]
-  (tel/log! {:level :info :id "broadcast!" :msg bc})
-  (broadcast-message-to-connected-clients!  bc))
+(defn broadcast! [{{:keys [message]} :params}]
+  (tel/log! {:level :info :id "broadcast!" :msg message})
+  (broadcast-message-to-connected-clients! message))
 
 (comment
   ;; Open a terminal and connect
