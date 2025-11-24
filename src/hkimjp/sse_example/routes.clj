@@ -4,7 +4,7 @@
    [reitit.ring :as rr]
    [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
    [ring.util.anti-forgery :refer [anti-forgery-field]]
-   [ring.util.response :as resp]
+   ; [ring.util.response :as resp]
    [taoensso.telemere :as tel]
    [hkimjp.sse-example.client :refer [client]]
    [hkimjp.sse-example.event :refer [event]]

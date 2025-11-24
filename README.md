@@ -1,10 +1,10 @@
-# hkimjp/ring-reitit-sse
+# hkimjp/sse-example
 
-SSE example using ring, reitit, htmx
+SSE example using ring, reitit, htmx and http-kit.
 
 ## Installation
 
-Download from https://github.com/hkimjp/ring-reitit-sse
+Download from https://github.com/hkimjp/sse-example
 
 ## Usage
 

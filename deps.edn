@@ -13,7 +13,7 @@
   ring/ring-defaults      {:mvn/version "0.7.0"}}
 
  :aliases
- {:run {:main-opts ["-m" "hkimjp.ring-reitit-sse"]}
+ {:run {:main-opts ["-m" "hkimjp.sse-example"]}
 
   :dev
   {:extra-paths ["dev"]

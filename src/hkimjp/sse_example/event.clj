@@ -36,7 +36,7 @@
    (str "<div>Nice to meet <b>you</b><p>paragraph</p></div>"))
 
   (broadcast-message-to-connected-clients!
-   (str (h/html [:div.text-2xl.font-bold.text-red-300 [:p "Hello"]])))
+   (str (h/html [:div.text-2xl.font-bold.text-red-600 [:p "Hello"]])))
 
   @clients
   (count @clients)

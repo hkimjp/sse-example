@@ -10,7 +10,7 @@
 
 (def navbar
   [:div.flex.bg-orange-600.items-baseline.gap-x-4
-   [:div.text-2xl.font-medium.text-white "SSE"]
+   [:div.text-2xl.font-medium.text-white "SSE example"]
    #_[:div {:class menu} [:a {:href "/workspace"}  "workspace"]]
    #_[:div {:class menu} [:a {:href "/scoreboard"} "scoreboard"]]
    #_[:div {:class menu} [:a {:href "/logout"}     "logout"]]
@@ -41,7 +41,7 @@
     [:script {:type "text/javascript"
               :src  "/assets/js/htmx-ext-sse.js"
               :defer true}]
-    [:title "SSE"]]
+    [:title "SSE example"]]
    [:body {:hx-boost "true"}
     [:div
      navbar

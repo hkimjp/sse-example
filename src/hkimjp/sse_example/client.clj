@@ -6,13 +6,13 @@
   (page
    [:div.m-4
     [:div.py-2
-     [:button.bg-sky-500.hover:bg-sky-200.active:bg-red-400.text-white.px-2
+     [:button.bg-sky-300.hover:bg-blue-600.active:bg-red-400.text-white.px-2
       {:hx-get    "/hx/now"
        :hx-target "#now"
        :hx-swap   "innerHTML"}
       "What time?"]]
     [:div [:span#now.border-1 "..."]]
-    [:div.font-2xl.text-bold.py-2 "SSE, 本番はここから"]
+    [:div.text-2xl.font-bold.py-2 "SSE example, using htmx-ext-sse"]
     [:div
      {:hx-ext      "sse"
       :sse-connect "/event"
